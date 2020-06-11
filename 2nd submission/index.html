@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>meme generator</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body onload="onInit()">
+
+    <nav class="header">
+        <a class="logo" href="index.html">meme generator</a>
+               <ul class="clean-list nav">
+               
+               
+                <li>
+                    <a href="#" onclick="openGallery()">Gallery</a>
+                </li>
+                <li>
+                    <a href="#">Memes</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+            </ul>
+    </nav>
+
+    <section class="editor container">
+        <canvas id="canvas"> </canvas>
+        <div class="buttons container">
+            <input type="text" name="line" placeholder="insert text" onfocus="this.value=''"
+                oninput="onSetLineText(this.value)">
+            <button title="switch lines" onclick="onSwitchLine()">switch lines</button>
+            <button title="increase text size" onclick="onChangeFontSize(5)">A+</button>
+            <button title="decrease text size" onclick="onChangeFontSize(-5)">A-</button>
+            <button title="line up" onclick="onChangeLineHeight(-5)">🠝</button>
+            <button title="line down" onclick="onChangeLineHeight(5)">🠟</button>
+            <button title="add Line" onclick="onAddLine()">L+</button>
+            <button title="remove Line" onclick="onRemoveLine()">L-</button>
+
+        </div>
+
+    </section>
+
+    <h2 class="container">welcome to my humble meme generator</h2>
+    <h3 class="container">please choose an image to create a meme from</h2>
+
+    <section class="gallery container">
+    </section>
+
+    <footer></footer>
+
+    <script src="js/meme-service.js"></script>
+    <script src="js/gallery-controller.js"></script>
+    <script src="js/meme-controller.js"></script>
+
+</body>
+
+</html>

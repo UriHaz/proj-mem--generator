@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    text-align: center
+
+}
+
+html {
+    font-family: tropical;
+}
+
+@font-face {
+    font-family: tropical;
+    src: url(../fonts/TropicalAsianDemoRegular-11V0.ttf);
+}
+
+button {
+    cursor: pointer;
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.clean-list {
+    list-style: none;
+}
+
+.hide {
+    display: none;
+}
+
+.container {
+    max-width: 85vw;
+    margin: auto;
+}
+
+img {
+    max-width: 150px;
+    margin: 1rem;
+    cursor: pointer;
+}
+
+.header {
+    border-bottom: 2px solid black;
+    font-size: 40px;
+}
+
+.nav {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    max-width: 20rem;
+    padding: 0.5rem;
+}
+
+li {
+    color: rgb(240, 170, 40);
+    font-weight: bolder;
+}
+
+.editor {
+    align-content: center;
+    padding: 1rem;
+}
+
+canvas {
+    height: 400px;
+    width: 400px;
+    margin: 0 auto;
+    margin-inline-end: 1rem;
+}
+
+footer {
+    border-top: 2px solid black;
+    height: 3rem;
+    position: relative;
+}
+
+.logo {
+color: rgb(240, 170, 40);
+font-weight: bolder;
+font-size: 50px;
+margin-top: 10px;
+}
+
+h2 {
+    padding: 1rem;
+    font-size: 35px;
+    font-weight: 200;
+    color: rgb(240, 170, 40);
+}
+h3 {
+    font-size: 30px;
+    font-weight: 200;
+
+    color: rgb(240, 170, 40);
+    text-decoration: underline;
+    padding-bottom: 1rem;
+}
+
+button {
+    margin: 1px
+}
+
+button:hover {
+font-style: oblique;
+}
+
+a:hover {
+font-style: oblique;
+}
