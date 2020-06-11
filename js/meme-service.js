@@ -20,7 +20,7 @@ function resetMeme() {
             color: 'white',
             strokeColor: 'black',
             y: 30,
-            x: gElCanvas.width /2
+            x: gElCanvas.width / 2
         },
         {
             txt: 'insert text',
@@ -30,7 +30,7 @@ function resetMeme() {
             color: 'white',
             strokeColor: 'black',
             y: gElCanvas.height - 10,
-            x: gElCanvas.width /2
+            x: gElCanvas.width / 2
         }
     ]
 }
@@ -84,12 +84,33 @@ function switchLine() {
 }
 
 function changeFontSize(diff) {
-    if (gMeme.lines[gMeme.selectedLineIdx].size <= 5 && diff < 0) return
-    gMeme.lines[gMeme.selectedLineIdx].size += diff;
+    var txt = gMeme.lines[gMeme.selectedLineIdx]
+    if (txt.size + diff ===0 || txt.size + diff > 70) txt.size
+    else txt.size += diff;
 }
 
 function changeLineHeight(diff) {
     const currLine = gMeme.lines[gMeme.selectedLineIdx];
     currLine.y += diff;
 }
+
+function removeLine() {
+    gMeme.lines.splice(gMeme.selectedLineIdx, 1);
+    gMeme.selectedLineIdx = 0;
+}
+
+function addLine() {
+    gMeme.lines.push({
+        txt: 'insert text here',
+        font: 'impact',
+        size: 30,
+        align: 'center',
+        color: 'white',
+        strokeColor: 'black',
+        y: gElCanvas.height / 2,
+        x: gElCanvas.width / 2
+    });
+    gMeme.selectedLineIdx = gMeme.lines.length - 1;
+}
+
 

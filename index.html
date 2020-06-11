@@ -10,13 +10,11 @@
 
 <body onload="onInit()">
 
-    <nav >
-        <div class="header">
-            <div>
-                <a href="index.html">meme generator</a>
-            </div>
-
-            <ul class="clean-list nav">
+    <nav class="header">
+        <a class="logo" href="index.html">meme generator</a>
+               <ul class="clean-list nav">
+               
+               
                 <li>
                     <a href="#" onclick="openGallery()">Gallery</a>
                 </li>
@@ -27,37 +25,37 @@
                     <a href="#">About</a>
                 </li>
             </ul>
-        </div>
     </nav>
 
-    <!-- EDITOR -->
-
-    <section class="editor">
-        <div>
-            <canvas> </canvas>
-        </div>
-        <div>
-            <input type="text" name="line" placeholder="insert text" onfocus="this.value=''" oninput="onSetLineText(this.value)">
+    <section class="editor container">
+        <canvas id="canvas"> </canvas>
+        <div class="buttons container">
+            <input type="text" name="line" placeholder="insert text" onfocus="this.value=''"
+                oninput="onSetLineText(this.value)">
             <button title="switch lines" onclick="onSwitchLine()">switch lines</button>
-            <div>
-                <button title="font size +" onclick="onChangeFontSize(5)">A+</button>
-                <button title="font size -" onclick="onChangeFontSize(-5)">A-</button>
-                <button title="line up" onclick="onChangeLineHeight(-5)">🠝</button>
-                <button title="line down" onclick="onChangeLineHeight(5)">🠟</button>
-            </div>
+            <button title="increase text size" onclick="onChangeFontSize(5)">A+</button>
+            <button title="decrease text size" onclick="onChangeFontSize(-5)">A-</button>
+            <button title="line up" onclick="onChangeLineHeight(-5)">🠝</button>
+            <button title="line down" onclick="onChangeLineHeight(5)">🠟</button>
+            <button title="add Line" onclick="onAddLine()">L+</button>
+            <button title="remove Line" onclick="onRemoveLine()">L-</button>
 
         </div>
 
     </section>
 
-    <!-- GALLERY -->
+    <h2 class="container">welcome to my humble meme generator</h2>
+    <h3 class="container">please choose an image to create a meme from</h2>
 
-    <section class="gallery">
+    <section class="gallery container">
     </section>
+
+    <footer></footer>
 
     <script src="js/meme-service.js"></script>
     <script src="js/gallery-controller.js"></script>
     <script src="js/meme-controller.js"></script>
+
 </body>
 
 </html>

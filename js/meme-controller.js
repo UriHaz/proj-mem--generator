@@ -7,15 +7,18 @@ function onInit() {
     _createImgs();
     renderGallery();
     gElCanvas = document.querySelector('canvas');
-    document.querySelector('.editor').classList.add('hide');
     gCtx = gElCanvas.getContext('2d');
+    resizeCanvas();
     resetMeme();
     renderMeme(); 
+    document.querySelector('.editor').classList.add('hide');
 
 }
 
 function openGallery() {
     document.querySelector('.gallery').classList.remove('hide');
+    document.querySelector('h2').classList.remove('hide');
+    document.querySelector('h3').classList.remove('hide');
     document.querySelector('.editor').classList.add('hide');
 }
 
@@ -66,6 +69,8 @@ function onSetMeme(imgId) {
     setInputText();
     document.querySelector('.editor').classList.remove('hide');
     document.querySelector('.gallery').classList.add('hide');
+    document.querySelector('h2').classList.add('hide');
+    document.querySelector('h3').classList.add('hide');
 }
 
 function onSwitchLine() {
@@ -84,4 +89,27 @@ function onChangeLineHeight(diff) {
     changeLineHeight(diff);
     const meme = getMeme();
     drawMeme(meme.selectedImgId)
+}
+
+function onRemoveLine() {
+    removeLine();
+    renderMeme();
+}
+
+function onAddLine() {
+    addLine();
+    setInputText()
+    renderMeme();
+}
+
+function onDownloadMeme(elLink) {
+    const data = gElCanvas.toDataURL();
+    elLink.href = data;
+    elLink.download = 'New_Meme';
+}
+
+function resizeCanvas() {
+    var elContainer = document.querySelector('canvas');
+    gElCanvas.width = elContainer.offsetWidth;
+    gElCanvas.height = elContainer.offsetHeight;
 }
