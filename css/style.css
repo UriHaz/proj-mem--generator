@@ -5,8 +5,7 @@
 body {
     margin: 0;
     text-align: center
-
-}
+    }
 
 html {
     font-family: tropical;
@@ -40,7 +39,7 @@ a {
     margin: auto;
 }
 
-img {
+.gallery>img {
     max-width: 150px;
     margin: 1rem;
     cursor: pointer;
@@ -49,10 +48,12 @@ img {
 .header {
     border-bottom: 2px solid black;
     font-size: 40px;
+    background-color: rgb(220, 237, 250);
+
 }
 
 .nav {
-    margin: auto;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     max-width: 20rem;
@@ -60,8 +61,8 @@ img {
 }
 
 li {
-    color: rgb(240, 170, 40);
-    font-weight: bolder;
+    color: rgb(252, 190, 19);
+    font-weight: 100;
 }
 
 .editor {
@@ -70,48 +71,83 @@ li {
 }
 
 canvas {
-    height: 400px;
-    width: 400px;
+    height: 370px;
+    width: 370px;
     margin: 0 auto;
     margin-inline-end: 1rem;
 }
 
 footer {
     border-top: 2px solid black;
-    height: 3rem;
-    position: relative;
+    background-color: rgb(220, 237, 250);
+    padding: 100px;
+
 }
 
-.logo {
-color: rgb(240, 170, 40);
-font-weight: bolder;
-font-size: 50px;
-margin-top: 10px;
+.logo>img {
+    width: 200px;
+    padding-top: 1rem;
+}
+
+.logo>img:hover {
+    opacity: 0.8;
 }
 
 h2 {
     padding: 1rem;
     font-size: 35px;
-    font-weight: 200;
-    color: rgb(240, 170, 40);
+    font-weight: 100;
+    color: rgb(252, 190, 19);
 }
 h3 {
     font-size: 30px;
-    font-weight: 200;
-
-    color: rgb(240, 170, 40);
-    text-decoration: underline;
+    font-weight: 100;
+    color: rgb(252, 190, 19);
     padding-bottom: 1rem;
 }
 
+input {
+margin-top: 1rem;
+padding: .2rem 3rem .2rem 1rem; 
+border-radius: 1rem;
+border: solid  rgb(247, 178, 52);
+outline: none;
+}
+
+input:hover {
+    padding: .2rem 4rem .2rem 2rem; 
+}
+
+input:focus {
+    padding: .2rem 4rem .2rem 1.5rem; 
+    background-color: rgb(220, 237, 250);
+}
 button {
-    margin: 1px
+    margin: 1px;
+    border: none;    
+    background-color: inherit;
+    font-family: tropical;
+    font-size: 2rem;
+    color: rgb(247, 178, 52);
+    font-weight: 500;
 }
 
 button:hover {
-font-style: oblique;
+    color: rgb(198, 222, 241);
+}
+
+button:active {
+    font-weight: 900;
 }
 
 a:hover {
 font-style: oblique;
+}
+
+a:active {
+    font-weight: 800;
+}
+
+.gallery>img:hover {
+padding: 3px;
 }

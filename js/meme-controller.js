@@ -38,7 +38,7 @@ function onSetLineText(lineText) {
 function drawLines() {
     const meme = getMeme();
     meme.lines.forEach((line, idx) => {
-        if (idx === meme.selectedLineIdx) gCtx.strokeStyle = 'red';
+        if (idx === meme.selectedLineIdx) gCtx.strokeStyle = 'orange';
         else gCtx.strokeStyle = line.strokeColor;
         gCtx.fillStyle = line.color;
         gCtx.font = line.size + 'px ' + line.font;
