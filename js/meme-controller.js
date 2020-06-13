@@ -1,6 +1,6 @@
 'use strict';
 
-var gElCanvas;
+// var gElCanvas;
 var gCtx;
 
 function onInit() {
@@ -10,16 +10,16 @@ function onInit() {
     gCtx = gElCanvas.getContext('2d');
     resizeCanvas();
     resetMeme();
-    renderMeme(); 
+    renderMeme();
     document.querySelector('.editor').classList.add('hide');
 
 }
 
 function openGallery() {
+    document.querySelector('.editor').classList.add('hide');
     document.querySelector('.gallery').classList.remove('hide');
     document.querySelector('h2').classList.remove('hide');
     document.querySelector('h3').classList.remove('hide');
-    document.querySelector('.editor').classList.add('hide');
 }
 
 function renderLines() {
@@ -30,8 +30,8 @@ function renderMeme() {
     drawMeme(getMeme().selectedImgId);
 }
 
-function onSetLineText(lineText) {
-    setLineText(lineText);
+function onSetLineText(text) {
+    setLineText(text);
     renderMeme();
 }
 
@@ -53,15 +53,29 @@ function drawMeme(imgId) {
     img.src = `./imgs/${imgId}.jpg`;
     img.onload = () => {
         gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height);
-        renderLines()
+        renderLines();
     }
 }
 
 function setInputText() {
-    let elLineInput = document.querySelector('[name="line"]');
-    elLineInput.value = getMeme().lines[getMeme().selectedLineIdx].txt;
-    elLineInput.focus()
+    let elMarkedLine = document.querySelector(".line");
+    elMarkedLine.value = getMeme().lines[getMeme().selectedLineIdx].txt;
+    elMarkedLine.focus()
+
 }
+
+function stopInputIfEnter() {
+
+    // var input = document.querySelector("input");
+    // input.addEventListener("keyup", function (event) {
+    //     var keyCode = event.keyCode;
+    //     if (keyCode === 13) keyCode=9
+    //     input.onkeydown = keyCode
+        
+    // });
+}
+
+
 
 function onSetMeme(imgId) {
     setMeme(imgId);
@@ -82,7 +96,7 @@ function onSwitchLine() {
 function onChangeFontSize(diff) {
     changeFontSize(diff);
     renderMeme()
-   
+
 }
 
 function onChangeLineHeight(diff) {
@@ -102,7 +116,7 @@ function onAddLine() {
     renderMeme();
 }
 
-function onDownloadMeme(elLink) {
+function DownloadMeme(elLink) {
     const data = gElCanvas.toDataURL();
     elLink.href = data;
     elLink.download = 'New_Meme';
@@ -113,3 +127,5 @@ function resizeCanvas() {
     gElCanvas.width = elContainer.offsetWidth;
     gElCanvas.height = elContainer.offsetHeight;
 }
+
+

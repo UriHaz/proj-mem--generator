@@ -3,12 +3,13 @@
 }
 
 body {
+    text-align: center;
     margin: 0;
-    text-align: center
     }
 
 html {
     font-family: tropical;
+
 }
 
 @font-face {
@@ -47,7 +48,6 @@ a {
 
 .header {
     border-bottom: 2px solid black;
-    font-size: 40px;
     background-color: rgb(220, 237, 250);
 
 }
@@ -57,17 +57,18 @@ a {
     display: flex;
     justify-content: space-between;
     max-width: 20rem;
-    padding: 0.5rem;
+    padding-right: 2rem;
 }
 
 li {
     color: rgb(252, 190, 19);
     font-weight: 100;
+    font-size: 2.2rem;
 }
 
 .editor {
     align-content: center;
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
 canvas {
@@ -107,27 +108,31 @@ h3 {
 }
 
 input {
-margin-top: 1rem;
-padding: .2rem 3rem .2rem 1rem; 
+margin-top: 0.3rem;
+padding-left: 1rem;
 border-radius: 1rem;
 border: solid  rgb(247, 178, 52);
 outline: none;
+font-family: tropical;
+font-size: x-large;
+color: rgb(107, 105, 109);
 }
 
 input:hover {
-    padding: .2rem 4rem .2rem 2rem; 
+    background-color: rgb(220, 237, 250);
+    font-style: oblique;
 }
 
 input:focus {
-    padding: .2rem 4rem .2rem 1.5rem; 
     background-color: rgb(220, 237, 250);
+    font-style: normal;
 }
+
 button {
-    margin: 1px;
     border: none;    
     background-color: inherit;
     font-family: tropical;
-    font-size: 2rem;
+    font-size: 1.7rem;
     color: rgb(247, 178, 52);
     font-weight: 500;
 }
@@ -137,6 +142,7 @@ button:hover {
 }
 
 button:active {
+    font-style: oblique;
     font-weight: 900;
 }
 

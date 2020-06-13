@@ -74,8 +74,8 @@ function setMeme(imgId) {
     gMeme.selectedImgId = imgId;
 }
 
-function setLineText(lineText) {
-    gMeme.lines[gMeme.selectedLineIdx].txt = lineText;
+function setLineText(text) {
+    gMeme.lines[gMeme.selectedLineIdx].txt = text;
 }
 
 function switchLine() {
@@ -90,8 +90,8 @@ function changeFontSize(diff) {
 }
 
 function changeLineHeight(diff) {
-    const currLine = gMeme.lines[gMeme.selectedLineIdx];
-    currLine.y += diff;
+    const currLine = gMeme.lines[gMeme.selectedLineIdx];  
+    currLine.y += (currLine.y+diff < 25 || currLine.y+diff > (gElCanvas.height))? 0 : diff;
 }
 
 function removeLine() {
@@ -101,7 +101,7 @@ function removeLine() {
 
 function addLine() {
     gMeme.lines.push({
-        txt: 'insert text here',
+        txt: 'insert text',
         font: 'impact',
         size: 30,
         align: 'center',

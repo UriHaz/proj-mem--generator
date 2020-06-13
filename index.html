@@ -11,7 +11,7 @@
 <body onload="onInit()">
 
     <nav class="header">
-        <a class="logo" href="index.html"><img class="logo" src="icons/logo.png" alt=""></a>
+        <a class="logo" href="index.html"><img class="logo" src="imgs/logo.png" alt=""></a>
                <ul class="clean-list nav">
                
                
@@ -30,15 +30,16 @@
     <section class="editor container">
         <canvas id="canvas"> </canvas>
         <div class="buttons container">
-            <input type="text" autocomplete="off" name="line" placeholder="insert text" onfocus="this.value=''"
-            oninput="onSetLineText(this.value)"><br>
-            <button title="switch between lines" onclick="onSwitchLine()">switch</button>
+            <input type="text" autocomplete="off" class="line" value="insert text" onfocus="value=''" onblur="value='insert text'"
+            oninput="onSetLineText(value)" onkeydown="stopInputIfEnter()"><br>
+            <button id="switchBtn" title="switch line" onclick="onSwitchLine()">switch</button>
             <button title="increase text size" onclick="onChangeFontSize(5)">increase</button>
             <button title="decrease text size" onclick="onChangeFontSize(-5)">decrease</button>
             <button title="move line up" onclick="onChangeLineHeight(-5)">up</button>
             <button title="move line down" onclick="onChangeLineHeight(5)">down</button>
             <button title="add Line" onclick="onAddLine()">add</button>
             <button title="remove Line" onclick="onRemoveLine()">remove</button>
+            <button title="reset meme" onclick="resetMeme(),renderMeme()">reset</button>
 
         </div>
 
