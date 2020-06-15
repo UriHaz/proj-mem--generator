@@ -9,54 +9,65 @@
 </head>
 
 <body onload="onInit()">
+    <div class="page-container">
+        <div class="content-wrap">
 
-    <nav class="header">
-        <a class="logo" href="index.html"><img class="logo" src="imgs/logo.png" alt=""></a>
-               <ul class="clean-list nav">
-               
-               
-                <li>
-                    <a href="#" onclick="openGallery()">Gallery</a>
-                </li>
-                <li>
-                    <a href="#">Memes</a>
-                </li>
-                <li>
-                    <a href="#">About</a>
-                </li>
-            </ul>
-    </nav>
+            <nav class="header">
+                <a class="logo" href="index.html"><img class="logo" src="imgs/logo.png" alt=""></a>
+                <ul class="clean-list nav">
 
-    <section class="editor container">
-        <canvas id="canvas"> </canvas>
-        <div class="buttons container">
-            <input type="text" autocomplete="off" class="line" value="insert text" onfocus="value=''" onblur="value='insert text'"
-            oninput="onSetLineText(value)" onkeydown="stopInputIfEnter()"><br>
-            <button id="switchBtn" title="switch line" onclick="onSwitchLine()">switch</button>
-            <button title="increase text size" onclick="onChangeFontSize(5)">increase</button>
-            <button title="decrease text size" onclick="onChangeFontSize(-5)">decrease</button>
-            <button title="move line up" onclick="onChangeLineHeight(-5)">up</button>
-            <button title="move line down" onclick="onChangeLineHeight(5)">down</button>
-            <button title="add Line" onclick="onAddLine()">add</button>
-            <button title="remove Line" onclick="onRemoveLine()">remove</button>
-            <button title="reset meme" onclick="resetMeme(),renderMeme()">reset</button>
 
+                    <li>
+                        <a href="#" onclick="openGallery()">Gallery</a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="openSavedMemes()">Memes</a>
+                    </li>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <section class="editor container">
+                <!-- <div class="canvas-container"> -->
+                <canvas id="canvas"> </canvas>
+                <!-- </div> -->
+                <div class="buttons container">
+                    <input type="text" autocomplete="off" class="line" oninput="onSetLineText(value)"
+                        onkeydown="stopInput(event)" onclick="setInputText()" onblur="value='insert text'"><br>
+                    <button title="switch line" onclick="onSwitchLine()">switch</button>
+                    <button title="increase text size" onclick="onChangeFontSize(5)">increase</button>
+                    <button title="decrease text size" onclick="onChangeFontSize(-5)">decrease</button>
+                    <button title="move line up" onclick="onChangeLineHeight(-5)">up</button>
+                    <button title="move line down" onclick="onChangeLineHeight(5)">down</button>
+                    <button title="add Line" onclick="onAddLine()">add</button>
+                    <button title="remove Line" onclick="onRemoveLine()">remove</button>
+                    <button title="reset meme" onclick="resetMeme(),renderMeme()">reset</button>
+                    <button onclick="onSaveMeme()">save</button>
+
+                </div>
+
+            </section>
+
+            <h2 class="container">welcome to my meme generator</h2>
+            <h3 class="container">please choose a background image for your meme</h2>
+
+                <section class="gallery container">
+                </section>
+
+                <section class="saved-memes container">
+                </section>
         </div>
+        <footer></footer>
 
-    </section>
+        <script src="js/meme-service.js"></script>
+        <script src="js/gallery-controller.js"></script>
+        <script src="js/meme-controller.js"></script>
+        <script src="js/storage-service.js"></script>
+        <script src="js/util.js"></script>
 
-    <h2 class="container">welcome to my meme generator</h2>
-    <h3 class="container">please choose a background image for your meme</h2>
-
-    <section class="gallery container">
-    </section>
-
-    <footer></footer>
-
-    <script src="js/meme-service.js"></script>
-    <script src="js/gallery-controller.js"></script>
-    <script src="js/meme-controller.js"></script>
-
+    </div>
 </body>
 
 </html>

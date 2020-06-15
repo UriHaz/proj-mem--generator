@@ -4,6 +4,12 @@ var gKeywords = { 'happy': 12, 'funny puk': 1 }
 
 var gImgs = [];
 
+var gSavedMemes = [];
+var gSavedMeme = {
+    id: '',
+    url: ''
+};
+
 var gElCanvas = document.querySelector('canvas');
 
 var gMeme = {
@@ -35,7 +41,7 @@ function resetMeme() {
     ]
 }
 
-function _createImgs() {
+function createImgs() {
     gImgs.push(_createImg(1, `imgs/1.jpg`, []));
     gImgs.push(_createImg(2, `imgs/2.jpg`, []));
     gImgs.push(_createImg(3, `imgs/3.jpg`, []));
@@ -66,7 +72,6 @@ function getMeme() {
 
 function getImgs() {
     return gImgs;
-
 }
 
 function setMeme(imgId) {
@@ -85,13 +90,13 @@ function switchLine() {
 
 function changeFontSize(diff) {
     var txt = gMeme.lines[gMeme.selectedLineIdx]
-    if (txt.size + diff ===0 || txt.size + diff > 70) txt.size
+    if (txt.size + diff === 0 || txt.size + diff > 70) txt.size
     else txt.size += diff;
 }
 
 function changeLineHeight(diff) {
-    const currLine = gMeme.lines[gMeme.selectedLineIdx];  
-    currLine.y += (currLine.y+diff < 25 || currLine.y+diff > (gElCanvas.height))? 0 : diff;
+    const currLine = gMeme.lines[gMeme.selectedLineIdx];
+    currLine.y += (currLine.y + diff < 25 || currLine.y + diff > (gElCanvas.height)) ? 0 : diff;
 }
 
 function removeLine() {
@@ -111,6 +116,29 @@ function addLine() {
         x: gElCanvas.width / 2
     });
     gMeme.selectedLineIdx = gMeme.lines.length - 1;
+}
+
+function editMeme(savedMemeId) {
+    savedMemeId = gSavedMemes.id
+}
+
+function getSavedMemes() {
+    return gSavedMemes;
+}
+
+
+function createSavedMemes() {
+    gSavedMemes.push(_createSavedMeme(makeId(3), loadFromStorage('saved-memes')));
+    console.log(gSavedMemes);
+    
+}
+
+function _createSavedMeme(id, url) {
+    return { id, url }
+}
+
+function saveMeme(memeUrl) {
+    saveToStorage('saved-memes', memeUrl)    
 }
 
 
